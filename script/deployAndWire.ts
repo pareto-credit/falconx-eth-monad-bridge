@@ -176,7 +176,7 @@ async function main() {
         getBridgeOwner(),
     ])
 
-    await deployContract(monadHre, MONAD_CONTRACT_NAME, ['FalconX AA', 'fxAA', monadEndpoint.address, getBridgeOwner()])
+    await deployContract(monadHre, MONAD_CONTRACT_NAME, ['Pareto AA Tranche - FalconXUSDC', 'AA_FalconXUSDC', monadEndpoint.address, getBridgeOwner()])
 
     await wireWithLedger(hre)
 

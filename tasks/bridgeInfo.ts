@@ -34,7 +34,7 @@ function resolveDeploymentInfo(root: string, networkName: string, contractName: 
     }
 }
 
-task('lz:bridge:info', 'Print deployment info and copy-paste bridge commands for FalconX AA')
+task('lz:bridge:info', 'Print deployment info and copy-paste bridge commands for Pareto AA Tranche - FalconXUSDC')
     .addOptionalParam('oappConfig', 'Path to the LayerZero config file', 'layerzero.config.ts', types.string)
     .addOptionalParam('amount', 'Human-readable amount to use in sample send commands', '1', types.string)
     .addOptionalParam(
@@ -61,10 +61,10 @@ task('lz:bridge:info', 'Print deployment info and copy-paste bridge commands for
         const monadToEthereum = `npx hardhat lz:oft:send --src-eid ${MONAD_EID} --dst-eid ${ETHEREUM_EID} --amount ${args.amount} --to ${args.ethereumRecipient} ${configArg}`
 
         console.log('')
-        console.log('Monad FalconX CV Bridge')
+        console.log('Monad Pareto AA Tranche Bridge')
         console.log('')
         console.log(`Project root: ${projectRoot}`)
-        console.log(`FalconX AA tranche: ${FALCONX_AA_TRANCHE}`)
+        console.log(`Pareto AA Tranche - FalconXUSDC: ${FALCONX_AA_TRANCHE}`)
         console.log(`Ethereum EID: ${ETHEREUM_EID}`)
         console.log(`Monad EID: ${MONAD_EID}`)
         console.log('')
@@ -99,7 +99,7 @@ task('lz:bridge:info', 'Print deployment info and copy-paste bridge commands for
         if (ethereumInfo.address) {
             console.log('Approval note')
             console.log(
-                `Approve FalconX AA to the Ethereum adapter before the first Ethereum -> Monad transfer. Adapter: ${ethereumInfo.address}`
+                `Approve Pareto AA Tranche - FalconXUSDC to the Ethereum adapter before the first Ethereum -> Monad transfer. Adapter: ${ethereumInfo.address}`
             )
             console.log('')
         }

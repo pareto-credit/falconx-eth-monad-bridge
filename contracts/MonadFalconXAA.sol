@@ -5,9 +5,9 @@ import { Ownable } from '@openzeppelin/contracts/access/Ownable.sol';
 import { OFT } from '@layerzerolabs/oft-evm/contracts/OFT.sol';
 
 /// @title MonadFalconXAA
-/// @notice LayerZero OFT representation of the FalconX AA tranche token on Monad.
+/// @notice LayerZero OFT representation of the Pareto AA Tranche - FalconXUSDC token on Monad.
 contract MonadFalconXAA is OFT {
-    /// @notice Initializes the Monad wrapped token contract.
+    /// @notice Initializes the Monad wrapped token contract for Pareto AA Tranche - FalconXUSDC.
     /// @param name_ ERC20 name for the wrapped token.
     /// @param symbol_ ERC20 symbol for the wrapped token.
     /// @param lzEndpoint_ The local LayerZero EndpointV2 address.

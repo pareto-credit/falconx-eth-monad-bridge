@@ -1,6 +1,6 @@
-## Monad FalconX Credit Vault Bridge
+## Monad Pareto FalconX Credit Vault Bridge
 
-Production bridge for the FalconX AA tranche token from Ethereum to Monad.
+Production bridge for the Pareto AA Tranche - FalconXUSDC token from Ethereum to Monad.
 
 - Canonical token on Ethereum: `0xC26A6Fa2C37b38E549a4a1807543801Db684f99C`
 - Ethereum EID: `30101`
@@ -91,6 +91,6 @@ npx hardhat lz:oft:send --src-eid 30390 --dst-eid 30101 --amount 1 --to YOUR_ETH
 
 ## Go-Live Notes
 
-- Approve the FalconX AA tranche token to the deployed Ethereum adapter before the first Ethereum to Monad transfer.
+- Approve the Pareto AA Tranche - FalconXUSDC token to the deployed Ethereum adapter before the first Ethereum to Monad transfer.
 - The Monad token is only the wrapped bridge representation.
 - `RPC_URL_MONAD` must point to the intended production Monad RPC; there is no fallback in this repo.
