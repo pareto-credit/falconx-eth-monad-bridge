@@ -62,6 +62,13 @@ Check peer wiring:
 npx hardhat lz:oapp:peers:get --oapp-config layerzero.config.ts
 ```
 
+Check the live LayerZero security posture:
+
+```bash
+npx hardhat lz:bridge:security --oapp-config layerzero.config.ts
+npx hardhat lz:oapp:config:get --oapp-config layerzero.config.ts
+```
+
 Verify the deployed contracts:
 
 ```bash
