@@ -31,14 +31,19 @@ const EVM_ENFORCED_OPTIONS: OAppEnforcedOption[] = [
     },
 ]
 
+const BRIDGE_DVNS: string[] = ['BitGo', 'Deutsche Telekom', 'Horizen', 'LayerZero Labs', 'Nethermind']
+const BRIDGE_DVN_THRESHOLD = 3
+const ETHEREUM_TO_MONAD_CONFIRMATIONS = 32
+const MONAD_TO_ETHEREUM_CONFIRMATIONS = 32
+
 // With the config generator, pathways declared are automatically bidirectional
 // i.e. if you declare A,B there's no need to declare B,A
 const pathways: TwoWayConfig[] = [
     [
         ethereumContract,
         monadContract,
-        [['LayerZero Labs'], []], // [ requiredDVN[], [ optionalDVN[], threshold ] ]
-        [1, 1], // [A to B confirmations, B to A confirmations]
+        [[], [BRIDGE_DVNS, BRIDGE_DVN_THRESHOLD]], // [ requiredDVN[], [ optionalDVN[], threshold ] ]
+        [ETHEREUM_TO_MONAD_CONFIRMATIONS, MONAD_TO_ETHEREUM_CONFIRMATIONS], // [A to B confirmations, B to A confirmations]
         [EVM_ENFORCED_OPTIONS, EVM_ENFORCED_OPTIONS], // Chain B enforcedOptions, Chain A enforcedOptions
     ],
 ]
