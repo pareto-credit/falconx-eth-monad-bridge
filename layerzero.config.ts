@@ -31,10 +31,13 @@ const EVM_ENFORCED_OPTIONS: OAppEnforcedOption[] = [
     },
 ]
 
-const BRIDGE_DVNS: string[] = ['BitGo', 'Deutsche Telekom', 'Horizen', 'LayerZero Labs', 'Nethermind']
+// We set Canary as the only required DVN to ensure client diversity as currently it is the only DVN that uses a different 
+// client than the other DVNs and that is also available on Monad. 
+const BRIDGE_REQUIRED_DVNS: string[] = ['Canary']
+const BRIDGE_OPTIONAL_DVNS: string[] = ['Deutsche Telekom', 'Horizen', 'LayerZero Labs', 'Nethermind']
 const BRIDGE_DVN_THRESHOLD = 3
-const ETHEREUM_TO_MONAD_CONFIRMATIONS = 32
-const MONAD_TO_ETHEREUM_CONFIRMATIONS = 32
+const ETHEREUM_TO_MONAD_CONFIRMATIONS = 16
+const MONAD_TO_ETHEREUM_CONFIRMATIONS = 16
 
 // With the config generator, pathways declared are automatically bidirectional
 // i.e. if you declare A,B there's no need to declare B,A
@@ -42,7 +45,7 @@ const pathways: TwoWayConfig[] = [
     [
         ethereumContract,
         monadContract,
-        [[], [BRIDGE_DVNS, BRIDGE_DVN_THRESHOLD]], // [ requiredDVN[], [ optionalDVN[], threshold ] ]
+        [BRIDGE_REQUIRED_DVNS, [BRIDGE_OPTIONAL_DVNS, BRIDGE_DVN_THRESHOLD]], // [ requiredDVN[], [ optionalDVN[], threshold ] ]
         [ETHEREUM_TO_MONAD_CONFIRMATIONS, MONAD_TO_ETHEREUM_CONFIRMATIONS], // [A to B confirmations, B to A confirmations]
         [EVM_ENFORCED_OPTIONS, EVM_ENFORCED_OPTIONS], // Chain B enforcedOptions, Chain A enforcedOptions
     ],
